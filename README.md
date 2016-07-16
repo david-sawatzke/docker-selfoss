@@ -67,7 +67,7 @@ The most basic run command would be:
     	--name 'selfoss' \
     	--publish 80:80 \
     	--volume /srv/selfoss:/var/www/html/data \
-    	jenserat/selfoss
+    	$CONAINTERNAME
 
 ## Upgrading and Maintenance
 
