@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#Cheap cron replacement
-sh -c "while true; do echo 'updating sources'; php /var/www/html/cliupdate.php; sleep 10m; done" &
+#Fix permissions
+chown -R nginx /selfoss/data
 
-exec apache2-foreground
+exec supervisord -c /etc/supervisor/supervisord.conf
