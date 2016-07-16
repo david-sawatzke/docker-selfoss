@@ -18,5 +18,8 @@ RUN unzip /tmp/selfoss-*.zip -d /var/www/html && \
 
 # Extend maximum execution time, so /refresh does not time out
 COPY php.ini /usr/local/etc/php/
-
+COPY start.sh /
+RUN chmod 500 /start.sh
 VOLUME /var/www/html/data
+
+CMD ["/start.sh"]
