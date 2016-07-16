@@ -1,6 +1,6 @@
 # selfoss for Docker
 
-(c) 2015 Jens Erat <email@jenserat.de>
+(c) 2015 Jens Erat <email@jenserat.de> and 2016 David Sawatzke <david@sawatzke.de>
 
 Redistribution and modifications are welcome, see the LICENSE file for details.
 
