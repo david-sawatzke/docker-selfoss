@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER Jens Erat <email@jenserat.de>
+MAINTAINER David Sawatzke <david@sawatzke.de>
 
 # Remove SUID programs
 RUN for i in `find / -perm +6000 -type f`; do chmod a-s $i; done
