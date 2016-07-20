@@ -31,7 +31,7 @@ Per default, selfoss relies on SQLite, which should be fully sufficient for a si
 
 In case you want to proxy selfoss with Nginx, this is a proposal for the `server { }` directive:
 
-    location ~* ^/(data\/logs|data\/sqlite|config\.ini|\.ht|password) {
+    location ~* ^/(data\/config.ini|data\/logs|data\/sqlite|config\.ini|\.ht|password) {
         deny all; # Disable temporarilly to generate a password usingi the `/password` page
     }
 
