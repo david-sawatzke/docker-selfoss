@@ -1,6 +1,7 @@
 FROM alpine
 MAINTAINER David Sawatzke <david@sawatzke.de>
 
+#Install neccessary packets
 RUN apk add --no-cache \
       nginx \
       php-fpm \
@@ -21,7 +22,6 @@ RUN apk add --no-cache \
       ca-certificates \
       supervisor
 
-
 # Extend maximum execution time, so /refresh does not time out
 COPY php.ini /etc/php/
 COPY nginx.conf /etc/nginx/nginx.conf
@@ -39,4 +39,5 @@ RUN wget -O /tmp/selfoss.zip https://github.com/SSilence/selfoss/releases/downlo
     ln -s /selfoss/data/config.ini /selfoss && \
     chown -R nginx /selfoss && \
     sed -i -e 's/base_url=/base_url=\/./g' /selfoss/defaults.ini
+
 CMD ["/start.sh"]
