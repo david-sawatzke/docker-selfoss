@@ -32,6 +32,9 @@ COPY start.sh /
 RUN chmod 500 /start.sh
 VOLUME /selfoss/data
 
+#Cronjob for updates
+RUN echo "*/15 * * * * php /selfoss/cliupdate.php" | crontab -u nginx -
+
 ENV SELFOSS_VERSION 2.15
 RUN wget -O /tmp/selfoss.zip https://github.com/SSilence/selfoss/releases/download/$SELFOSS_VERSION/selfoss-$SELFOSS_VERSION.zip && \
     unzip /tmp/selfoss.zip -d /selfoss && \
