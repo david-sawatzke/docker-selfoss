@@ -21,7 +21,7 @@ Selfoss requires a bunch of folders in the data directory. Make sure to create t
 
 ### Configuration
 
-Usually, the configuration file would be stored in `/var/www/html/config.ini`, and thus not persisted. The image symlinks it into the data directory, so you can edit `/var/www/html/data/config.ini` instead. For configuration directives, follow the [selfoss documentation](http://selfoss.aditu.de/#documentation). Generally, no documentation is required; but strongly recommended (ie., to make it password protected).
+Usually, the configuration file would be stored in `/selfoss/config.ini`, and thus not persisted. The image symlinks it into the data directory, so you can edit `/selfoss/data/config.ini` instead. For configuration directives, follow the [selfoss documentation](http://selfoss.aditu.de/#documentation). Generally, no documentation is required; but strongly recommended (ie., to make it password protected).
 
 ### Database
 
@@ -54,10 +54,10 @@ The most basic run command would be:
     docker run -d \
     	--name 'selfoss' \
     	--publish 80:80 \
-    	--volume /srv/selfoss:/var/www/html/data \
+    	--volume /srv/selfoss:/selfoss/data \
     	$CONAINTERNAME
 
-## Upgrading and Maintenance
+## Upgrading
 
 Selfoss will automatically upgrade the database. For other maintenance tasks during upgrades, refer to the [selfoss documentation](http://selfoss.aditu.de/#documentation).
 
