@@ -60,7 +60,3 @@ The most basic run command would be:
 ## Upgrading
 
 Selfoss will automatically upgrade the database. For other maintenance tasks during upgrades, refer to the [selfoss documentation](http://selfoss.aditu.de/#documentation).
-
-To enter the container and perform maintenance, use (given you named the container `selfoss`):
-
-    docker exec -ti selfoss /bin/bash
