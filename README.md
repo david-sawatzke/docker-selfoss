@@ -10,14 +10,7 @@ This Dockerfile provides a selfoss image.
 
 ## Setup
 
-All data is stored in `/var/www/html/data`, which is persisted as a volume, but it might be reasonable to export it to the local file system. Port 80 is exposed for the web application.
-
-### Data Folders
-
-Selfoss requires a bunch of folders in the data directory. Make sure to create them if you export the volume, running following from the data volume's root:
-
-    mkdir cache favicons logs thumbnails sqlite
-    chown -R 33 . # UID 33 is www-data inside the container
+All data is stored in `/selfoss/data`, which is persisted as a volume, but it might be reasonable to export it to the local file system. Port 80 is exposed for the web application.
 
 ### Configuration
 
