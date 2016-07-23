@@ -28,8 +28,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY php-fpm.conf /etc/php/php-fpm.conf
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY nginx.conf /etc/nginx/
-COPY start.sh /
-RUN chmod 500 /start.sh
+COPY init.sh /
+RUN chmod 500 /init.sh
 VOLUME /selfoss/data
 
 #Cronjob for updates
@@ -43,4 +43,4 @@ RUN wget -O /tmp/selfoss.zip https://github.com/SSilence/selfoss/releases/downlo
     chown -R nginx /selfoss && \
     sed -i -e 's/base_url=/base_url=\/./g' /selfoss/defaults.ini
 
-CMD ["/start.sh"]
+CMD ["/init.sh"]
